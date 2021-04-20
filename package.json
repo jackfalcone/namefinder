@@ -19,7 +19,7 @@
     "eject": "react-scripts eject",
     "server": "json-server -p3001 --watch topnames.json"
   },
-  "proxy": "https://jsonstorage.net/api/items/51782ff5-8fd8-49da-8cc1-0e8d784aeb96",
+  "proxy": "https://jsonstorage.net/",
   "eslintConfig": {
     "extends": [
       "react-app",

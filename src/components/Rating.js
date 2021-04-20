@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-axios.defaults.proxy.host = "https://jsonstorage.net/"
+axios.defaults.baseURL = "https://jsonstorage.net/"
 
 const Rating = ({ actualname, user }) => {
     const [isRated, setIsRated] = useState(false)

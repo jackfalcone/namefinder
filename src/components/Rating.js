@@ -4,7 +4,8 @@ axios.defaults.baseURL = "https://jsonstorage.net/"
 
 const optionAxios = {
     headers: {
-        'Content-Type': 'application/json'
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
     }
 }
 

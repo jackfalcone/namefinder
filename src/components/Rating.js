@@ -13,14 +13,14 @@ const Rating = ({ actualname, user }) => {
             const total = newObject.rating[0] + newObject.rating[1]
             const changedObject = { ...newObject, summary: total, isRated: true}
             console.log(changedObject)
-            axios.put(`http://localhost:3001/allnames/${id}`, changedObject) 
+            axios.put(`https://jsonstorage.net/api/items/51782ff5-8fd8-49da-8cc1-0e8d784aeb96/${id}`, changedObject) 
             setIsRated(true)
         } else if (user === 'yves') {
             const existingRating = existingObject.rating[0]
             const newObject = { ...existingObject, rating: [existingRating, rating] }
             const total = newObject.rating[0] + newObject.rating[1]
             const changedObject = { ...newObject, summary: total, isRated: true}
-            axios.put(`http://localhost:3001/allnames/${id}`, changedObject)
+            axios.put(`https://jsonstorage.net/api/items/51782ff5-8fd8-49da-8cc1-0e8d784aeb96/${id}`, changedObject)
             setIsRated(true)
         }
     }

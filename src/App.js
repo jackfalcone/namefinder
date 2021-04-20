@@ -10,18 +10,21 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/allnames')
+      .get('https://jsonstorage.net/api/items/51782ff5-8fd8-49da-8cc1-0e8d784aeb96')
       .then(response => {
         setNames(response.data)
       })
   }, [])
 
+  console.log(names)
+
   const handleClickName = () => {
-    const max = Object.keys(names).length
+    const max = names.allnames.length
     const random = Math.floor(Math.random() * max)
-    const name = names[random]
+    const name = names.allnames[random]
     setShowName(name)
   }
+
 
   const handleChange = (event) => {
     setUser(event.target.value)

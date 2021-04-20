@@ -8,18 +8,17 @@ const Favorites = ({ change }) => {
 
     useEffect(() => {
         axios
-        .get('http://localhost:3001/allnames')
+        .get('https://jsonstorage.net/api/items/51782ff5-8fd8-49da-8cc1-0e8d784aeb96')
         .then(response => {
-            setList(response.data)
+            const list = response.data
+            setList(list.allnames)
         })
     }, [change])
-
+    
     useEffect(() => {
-        const ratedList = list.filter(e => e.isRated === true)
+        const ratedList = Object.values(list).filter(e => e.isRated === true)
         setTopList(ratedList.sort((a, b) => b.summary - a.summary))
     }, [list])
-
-    console.log(topList)
 
     useEffect(() => {
         setShortTop(topList.slice(0, 20))

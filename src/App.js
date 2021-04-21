@@ -16,8 +16,6 @@ const App = () => {
       })
   }, [])
 
-  console.log(names)
-
   const handleClickName = () => {
     const max = names.allnames.length
     const random = Math.floor(Math.random() * max)
@@ -42,7 +40,7 @@ const App = () => {
       <button onClick={handleClickName}>
         Show new name
       </button>
-      <Display actualname={showName} user={user} />
+      <Display actualname={showName} user={user} all={names} />
     </div>
   )
 }

@@ -9,29 +9,38 @@ const optionAxios = {
     }
 }
 
-const Rating = ({ actualname, user }) => {
+const Rating = ({ actualname, user, all }) => {
     const [isRated, setIsRated] = useState(false)
+    const [tosend, setTosend] = useState()
     
+    console.log(all)
+
     const clickHandler = (rating) => {
         const existingObject = actualname
-        const id = existingObject.id
+        const id = existingObject.id -1
+
         if (user === 'carmen') {
-            const existingRating = existingObject.rating[1]
-            const newObject = { ...existingObject, rating: [rating, existingRating] }
-            const total = newObject.rating[0] + newObject.rating[1]
-            const changedObject = { ...newObject, summary: total, isRated: true}
-            console.log(changedObject)
-            axios.put(`api/items/51782ff5-8fd8-49da-8cc1-0e8d784aeb96/${id}`, changedObject, optionAxios) 
+            all.allnames[id].rating[0] = rating
+            const total = all.allnames[id].rating[0] + all.allnames[id].rating[1]
+            all.allnames[id].summary = total
+            all.allnames[id].isRated = true
+            setTosend(all)
+            console.log(all.allnames[id])
             setIsRated(true)
         } else if (user === 'yves') {
-            const existingRating = existingObject.rating[0]
-            const newObject = { ...existingObject, rating: [existingRating, rating] }
-            const total = newObject.rating[0] + newObject.rating[1]
-            const changedObject = { ...newObject, summary: total, isRated: true}
-            axios.put(`api/items/51782ff5-8fd8-49da-8cc1-0e8d784aeb96/${id}`, changedObject, optionAxios)
+            all.allnames[id].rating[1] = rating
+            const total = all.allnames[id].rating[0] + all.allnames[id].rating[1]
+            all.allnames[id].summary = total
+            all.allnames[id].isRated = true
+            setTosend(all)
+            console.log(all.allnames[id])
             setIsRated(true)
-        }
+        } 
     }
+
+    useEffect(() => {
+        axios.put(`api/items/51782ff5-8fd8-49da-8cc1-0e8d784aeb96`, tosend, optionAxios)
+    })
 
     useEffect(() => setIsRated(false), [actualname])
 

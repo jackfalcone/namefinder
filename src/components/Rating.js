@@ -35,7 +35,9 @@ const Rating = ({ actualname, user, all }) => {
             setTosend(all)
             console.log(all.allnames[id])
             setIsRated(true)
-        } 
+        } else {
+            alert('Choose user first for rating')
+        }
     }
 
     useEffect(() => {

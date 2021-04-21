@@ -30,15 +30,15 @@ const App = () => {
 
   return (
     <div>
-      <h1>NameFinder</h1>
+      <h1>Name Finder</h1>
       <strong>User:</strong>
       <form onChange={handleChange}>
-        <input type="radio" value="carmen" name="user" /> Carmen
-        <input type="radio" value="yves" name="user" /> Yves
+        <input type="radio" value="carmen" name="user" />Carmen
+        <input type="radio" value="yves" name="user" />Yves
       </form>
       <br />
       <button onClick={handleClickName}>
-        Show new name
+        show new name
       </button>
       <Display actualname={showName} user={user} all={names} />
     </div>

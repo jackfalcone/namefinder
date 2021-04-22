@@ -31,7 +31,7 @@ const Favorites = ({ change }) => {
                 <ul>
                     {shortTop.map(name => 
                         <li key={name.id}>
-                           <strong>{name.name}</strong> <em>{name.gender}</em> Rating: {name.summary} <small>C{name.rating[0]} Y{name.rating[1]}</small>
+                           <strong>{name.name}</strong> <em>{name.gender}</em>&nbsp;&nbsp;{name.summary} <small>C{name.rating[0]} Y{name.rating[1]}</small>
                         </li>
                     )}
                 </ul>

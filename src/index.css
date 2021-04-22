@@ -35,7 +35,7 @@ button {
   color: black;
   font-weight: 600;
   font-size: .95rem;
-
+  opacity: .8;
 }
 
 li em {

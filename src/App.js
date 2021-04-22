@@ -41,8 +41,17 @@ const App = () => {
   const handleChange = (event) => {
     if (pw === '6170') {
       setUser(event.target.value)
+      if (event.target.value === 'carmen') {
+        const userNotRated = notRated.filter(e => e.rating[0] === 0)
+        setNotRated(userNotRated)
+      } else if (event.target.value === 'yves') {
+        const userNotRated = notRated.filter(e => e.rating[1] === 0)
+        setNotRated(userNotRated)
+      }
     }
   }
+
+  console.log(notRated)
 
   return (
     <div>

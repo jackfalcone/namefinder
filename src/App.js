@@ -5,6 +5,7 @@ import Display from './components/Display'
 
 const App = () => {
   const [names, setNames] = useState([])
+  const [notRated, setNotRated] = useState([])
   const [showName, setShowName] = useState([])
   const [user, setUser] = useState()
   const [pw, setPw] = useState()
@@ -14,13 +15,22 @@ const App = () => {
       .get('https://jsonstorage.net/api/items/51782ff5-8fd8-49da-8cc1-0e8d784aeb96')
       .then(response => {
         setNames(response.data)
+        const json = response.data
+        const allnames = json.allnames
+        const notRated = allnames.filter(e => e.rating[0] === 0 || e.rating[1] === 0)
+        setNotRated(notRated)
+        console.log(notRated)
       })
   }, [])
 
+  const getRandom = (max) => {
+    return Math.floor(Math.random() * max)
+  }
+
   const handleClickName = () => {
-    const max = names.allnames.length
-    const random = Math.floor(Math.random() * max)
-    const name = names.allnames[random]
+    const max = notRated.length
+    const random = getRandom(max)
+    const name = notRated[random]
     setShowName(name)
   }
 

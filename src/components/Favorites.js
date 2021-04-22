@@ -21,13 +21,13 @@ const Favorites = ({ change }) => {
     }, [list])
 
     useEffect(() => {
-        setShortTop(topList.slice(0, 20))
+        setShortTop(topList.slice(0, 50))
     }, [topList])
 
     if (shortTop) {
         return (
             <div>
-                <h3>Top Rating (first 20)</h3>
+                <h3>Top 50 Rating</h3>
                 <ul>
                     {shortTop.map(name => 
                         <li key={name.id}>

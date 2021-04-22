@@ -8,8 +8,11 @@ const Display = ({ actualname, user, all }) => {
     return(
         <div>
             <h2>{actualname.name}</h2>
-            <strong>{actualname.gender}</strong>
+            <em>{actualname.gender}</em>
+            <br />
+            <br />
             <Rating actualname={actualname} user={user} all={all} />
+            <br />
             <Favorites change={actualname} />
         </div>
     )

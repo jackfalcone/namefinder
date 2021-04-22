@@ -7,8 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #FAACA8;
-  background-image: linear-gradient(to right top, #ffffff, #fcfdff, #f5fcff, #edfbff, #e5fbff, #dcfbff, #d4fbfd, #cbfbfb, #c2fbf6, #bafbef, #b4fbe6, #b1fadc);  
+  background-color: white;
 }
 
 code {
@@ -26,14 +25,54 @@ ul {
 }
 
 li {
-  margin: 5px 0;
+  margin: 7px 0;
 }
 
 button {
   margin: 3px;
   padding: 3px 7px;
-  background-color: rgba(1, 0, 39, 0.76);
-  color: white;
+  background-color: white;
+  color: black;
+  font-weight: 600;
   font-size: .95rem;
 
+}
+
+li em {
+  opacity: .7;
+}
+
+li small {
+  opacity: .7;
+}
+
+#top {
+  background-color: rgb(0, 59, 61);
+  color: white;
+  padding: 12px 0;
+  opacity: .9;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+input {
+  margin: 7px 5px;
+}
+
+#top strong {
+  opacity: .6;
+}
+
+#top small {
+  opacity: .6;
+}
+
+strong {
+  font-size: 1.2rem;
+}
+
+h3 {
+  opacity: .8;
 }

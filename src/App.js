@@ -7,6 +7,7 @@ const App = () => {
   const [names, setNames] = useState([])
   const [showName, setShowName] = useState([])
   const [user, setUser] = useState()
+  const [pw, setPw] = useState()
 
   useEffect(() => {
     axios
@@ -23,19 +24,31 @@ const App = () => {
     setShowName(name)
   }
 
+  const handlePw = (event) => {
+    setPw(event.target.value)
+  }
 
   const handleChange = (event) => {
-    setUser(event.target.value)
+    if (pw === '6170') {
+      setUser(event.target.value)
+    }
   }
 
   return (
     <div>
-      <h1>Name Finder</h1>
-      <strong>User:</strong>
-      <form onChange={handleChange}>
-        <input type="radio" value="carmen" name="user" />Carmen
-        <input type="radio" value="yves" name="user" />Yves
-      </form>
+      <div id="top">
+        <h1>Name Finder</h1>
+        <strong>User</strong>
+        <form onChange={handlePw}>
+          Password <input type="password" name="pw" />
+        </form>
+        <small>Enter password before choosing user</small>
+        <form onChange={handleChange}>
+          <input type="radio" value="carmen" name="user" />Carmen
+          &nbsp;
+          <input type="radio" value="yves" name="user" />Yves
+        </form>
+      </div>
       <br />
       <button onClick={handleClickName}>
         show new name

@@ -32,6 +32,13 @@ const App = () => {
     const random = getRandom(max)
     const name = notRated[random]
     setShowName(name)
+    if (user === 'carmen') {
+      const userNotRated = notRated.filter(e => e.rating[0] === 0)
+      setNotRated(userNotRated)
+    } else if (user === 'yves') {
+      const userNotRated = notRated.filter(e => e.rating[1] === 0)
+      setNotRated(userNotRated)
+    }
   }
 
   const handlePw = (event) => {
